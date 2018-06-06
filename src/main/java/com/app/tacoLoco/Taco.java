@@ -13,26 +13,26 @@ public class Taco {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
-
-	@Column
-    @ElementCollection(targetClass=String.class)
-	private List<String> orderItems;
-
+	private int id;
+	
 	@Column
 	private String firstName;
 
 	@Column
 	private String lastName;
 
+	@Column
+    @ElementCollection(targetClass=String.class)
+	private List<String> orderItems;
+
 	public Taco() {
 
 	}
 
-	public Taco(List<String> orderItems, String firstName, String lastName) {
-		this.orderItems = orderItems;
+	public Taco(String firstName, String lastName, List<String> orderItems) {
 		this.firstName = firstName;
 		this.lastName = lastName;
+		this.orderItems = orderItems;
 	}
 
 	public int getId() {
@@ -40,10 +40,6 @@ public class Taco {
 	}
 	public void setId(int id) {
 		this.id = id;
-	}
-
-	public List<String> getOrderItems() {
-		return orderItems;
 	}
 
 	public String getFirstName() {
@@ -54,9 +50,13 @@ public class Taco {
 		return lastName;
 	}
 
+	public List<String> getOrderItems() {
+		return orderItems;
+	}
+
 	@Override
 	public String toString() {
-		return "\nfirstName: " + firstName + "\nlastName: " + lastName + "\norderItems: " + orderItems + "\n";
+		return "\n\nfirstName: " + firstName + "\nlastName: " + lastName + "\norderItems: " + orderItems + "\n";
 	}
 
 }
