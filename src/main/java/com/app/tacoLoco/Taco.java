@@ -25,7 +25,7 @@ public class Taco {
 
 	@Override
 	public String toString() {
-		return "Taco [orderItems=" + orderItems + "]";
+		return "orderItems = " + orderItems;
 	}
 
 
