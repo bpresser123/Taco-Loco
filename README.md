@@ -4,17 +4,16 @@
 
 Link to Postman: https://www.getpostman.com/
 
-1. From your Taco Loco project folder, run `mvn package` in the command line to create a JAR file in the target folder.
-2. Navigate to tacoLoco/target and run `java -jar <jar-file-name>.jar` in the command line to run the application.
-3. Open Postman and add Content-Type as the key and application/json as the value in the “Headers” section.
 
-![image](https://user-images.githubusercontent.com/15268672/39932971-a7821888-550f-11e8-8564-abdb34709881.png)
+1. Open Postman and go to the “Headers” section. Add Content-Type as the key and application/json as the value.
 
-4. Set the URI to http://localhost:8080/placeOrder and set the HTTP request method to POST.
+![image](https://user-images.githubusercontent.com/15268672/41075077-fdd11008-69d8-11e8-8090-0468a3c1bf7d.png)
 
-![image](https://user-images.githubusercontent.com/15268672/39933137-21b8a536-5510-11e8-8947-f4f378682a6f.png)
+2. Set the URI to https://taco-loco.herokuapp.com/placeOrder and set the HTTP request method to POST.
 
-5. Follow the steps in the Response Examples section below to see different responses from the Taco Loco application.
+![image](https://user-images.githubusercontent.com/15268672/41075095-0e855a1c-69d9-11e8-8d4a-0e6a7d745ee5.png)
+
+3. Follow the steps in the Response Examples section below to see different responses from the Taco Loco application.
 
 # **Taco Loco Menu**
 
@@ -29,53 +28,54 @@ Link to Postman: https://www.getpostman.com/
 
 ```
   {
-      "orderItems": ["veggie taco", "veggie taco", "veggie taco", "veggie taco"]
+      "firstName": "Michael", "lastName": "Jordan", "orderItems": ["veggie taco", "veggie taco", "veggie taco", "veggie taco"]
   }
 ```
 
 2. Select “Send” to POST the taco order and check the response shown in the Response section of the Postman application (below the Request section). In this case, the order total should be $8.00 after a 20% discount is applied.
 
 
-![image](https://user-images.githubusercontent.com/15268672/39932821-31a5284e-550f-11e8-8c01-16f6156be8d5.png)
+![image](https://user-images.githubusercontent.com/15268672/41074805-d4d84974-69d7-11e8-9093-71a8734d7d6a.png)
 
 
 1. Copy and paste the JSON object (taco order) shown below into the body of the request.
 
 ```
   {
-      "orderItems": ["veggie taco", "veggie taco", "veggie taco"]
+      "firstName": "David", "lastName": "Blaine", "orderItems": ["veggie taco", "chorizo taco", "BEEF taco"]
   }
 ```
 
-2. Select “Send” to POST the taco order and check the response shown in the Response section of the Postman application (below the Request section). In this case, the order total should be $7.50.
+2. Select “Send” to POST the taco order and check the response shown in the Response section of the Postman application (below the Request section). In this case, the order total should be $9.00.
 
 
-<img width="1593" alt="screen shot 2018-05-14 at 11 57 47 am" src="https://user-images.githubusercontent.com/15268672/40008925-90ef3bc6-576e-11e8-80bc-d314ba0d67ea.png">
+![image](https://user-images.githubusercontent.com/15268672/41074846-08336dee-69d8-11e8-903e-2a39b593fa07.png)
 
 
 1. Copy and paste the JSON object (taco order) shown below into the body of the request.
 
 ```
   {
-      "orderItems": ["veggie taco", "veggie taco", "veggie taco", "beef"]
+      "firstName": "Rick", "lastName": "James", "orderItems": ["veggie taco", "veggie taco", "veggie taco", "chicken "]
   }
 ```
 
-2. Select “Send” to POST the taco order and check the response shown in the Response section of the Postman application (below the Request section). In this case, you should see a Bad Request error (400) with a message saying "beef is not a valid entry.. Please choose from the following options: Veggie Taco ($2.50), Beef Taco ($3.00), Chicken Taco ($3.00), Chorizo Taco ($3.50)"
+2. Select “Send” to POST the taco order and check the response shown in the Response section of the Postman application (below the Request section). In this case, you should see a Bad Request error (400) with a message saying "chicken is not a valid entry.. Please choose from the following options: Veggie Taco ($2.50), Beef Taco ($3.00), Chicken Taco ($3.00), Chorizo Taco ($3.50)"
 
 
-<img width="1593" alt="screen shot 2018-05-14 at 11 57 30 am" src="https://user-images.githubusercontent.com/15268672/40009672-af1bc720-5770-11e8-834c-83aec504948f.png">
+![image](https://user-images.githubusercontent.com/15268672/41075168-68330d5c-69d9-11e8-906e-ef6a22799d4c.png)
 
 
 1. Copy and paste the JSON object (taco order) shown below into the body of the request.
 
 ```
   {
-      "orderItems": []
+      "firstName": "Brandon", "lastName": "Manson", "orderItems": []
   }
 ```
 
 2. Select “Send” to POST the taco order and check the response shown in the Response section of the Postman application (below the Request section). In this case, you should see a Bad Request error (400) with a message saying "Your order is empty.. "
 
 
-<img width="1593" alt="screen shot 2018-05-14 at 11 57 56 am" src="https://user-images.githubusercontent.com/15268672/40009734-d341a926-5770-11e8-8405-36b291cf6d2b.png">
+![image](https://user-images.githubusercontent.com/15268672/41074933-6270d288-69d8-11e8-8e13-b3d6d37335fc.png)
+
